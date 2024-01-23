@@ -32,10 +32,10 @@ export const About = () => {
   ];
 
   return (
-    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32">
+    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32 p-4">
       <div className="flex flex-col items-center gap-y-4">
-        <h1 className="text-negative text-4xl font-bold">About</h1>
-        <p className="max-w-[50%] text-center text-xl leading-loose">
+        <h1 className="text-4xl font-bold text-negative">About</h1>
+        <p className="w-[50%] text-center text-xl leading-loose">
           Hi, I&#39;m Terrence! I am currently a second-year computer science
           student studying at Stevens Institute of Technology. My primarily
           focus on fullstack web development but I am also interested in

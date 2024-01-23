@@ -9,6 +9,7 @@
   --foreground-primary: #999;
   --foreground-negative: #000;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,10 +20,6 @@
     --foreground-primary: #999;
     --foreground-negative: #fff;
   }
-}
-
-span {
-  border: var(--foreground-negative) !important;
 }
 
 body {

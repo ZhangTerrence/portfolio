@@ -27,25 +27,25 @@ export const Projects = () => {
   }, []);
 
   const projects: Project[] = [
-    {
-      title: "Readdit",
-      description:
-        "A social media website inspired by Reddit. Fully featured with communities, posts, and comments as well as user authentication and authorization. Built using NextJS and Prisma Postgres.",
-      image: {
-        url: "/static/images/Readdit.png",
-        alt_text: "Readdit image",
-      },
-      links: {
-        site_url: "https://readdit-eta.vercel.app/",
-        github_url: "https://github.com/ZhangTerrence/readdit",
-      },
-    },
+    // {
+    //   title: "Readdit",
+    //   description:
+    //     "A social media website inspired by Reddit. Fully featured with communities, posts, and comments as well as user authentication and authorization. Built using NextJS and Prisma Postgres.",
+    //   image: {
+    //     url: "/static/images/Readdit.png",
+    //     alt_text: "Readdit image",
+    //   },
+    //   links: {
+    //     site_url: "https://readdit-eta.vercel.app/",
+    //     github_url: "https://github.com/ZhangTerrence/readdit",
+    //   },
+    // },
   ];
 
   if (!isMounted) return null;
 
   return (
-    <section className="flex h-fit w-screen flex-col items-center justify-center gap-y-4">
+    <section className="flex h-fit w-screen flex-col items-center justify-center gap-y-4 p-4">
       <h1 className="text-4xl font-bold text-negative">Projects</h1>
       <Chrono
         mode="VERTICAL_ALTERNATING"
