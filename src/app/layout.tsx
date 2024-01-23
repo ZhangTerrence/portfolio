@@ -5,7 +5,7 @@ import "./globals.css";
 const font = Ubuntu({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "Terrence Zhang Portfolio",
+  title: "Terrence Zhang",
   description: "",
 };
 
