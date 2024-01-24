@@ -1,4 +1,7 @@
+"use client";
+
 import { Project } from "./Project";
+import { motion } from "framer-motion";
 
 export type Project = {
   title: string;
@@ -79,14 +82,50 @@ export const Projects = () => {
     },
   ];
 
+  const projectContainerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        ease: "linear",
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const projectVariant = {
+    hidden: {
+      opacity: 0,
+      bottom: -25,
+    },
+    visible: {
+      opacity: 1,
+      bottom: 0,
+    },
+  };
+
   return (
     <section className="flex h-fit w-screen flex-col items-center justify-center gap-y-4 px-4 py-16">
-      <h1 className="text-4xl font-bold text-negative">Projects</h1>
-      <div className="grid grid-cols-3 gap-8">
+      <motion.h1
+        className="relative text-4xl font-bold text-negative"
+        initial={{ opacity: 0, bottom: -25 }}
+        whileInView={{ opacity: 1, bottom: 0 }}
+        transition={{ ease: "easeOut", duration: 0.75 }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h1>
+      <motion.div
+        className="grid grid-cols-3 gap-8"
+        initial={"hidden"}
+        whileInView={"visible"}
+        variants={projectContainerVariant}
+        viewport={{ once: true }}
+      >
         {projects.map((project, i) => {
-          return <Project key={i} project={project} />;
+          return <Project key={i} variant={projectVariant} project={project} />;
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -10,6 +10,7 @@
   --foreground-negative: #000;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,10 +1,22 @@
-import Image from "next/image";
-import type { Project as ProjectType } from "./Projects";
-import { SiGithub } from "react-icons/si";
+"use client";
 
-export const Project = ({ project }: { project: ProjectType }) => {
+import Image from "next/image";
+import { type Project as ProjectType } from "./Projects";
+import { SiGithub } from "react-icons/si";
+import { type Variants, motion } from "framer-motion";
+
+export const Project = ({
+  variant,
+  project,
+}: {
+  variant: Variants;
+  project: ProjectType;
+}) => {
   return (
-    <div className="flex h-full w-full flex-col overflow-hidden rounded-xl border-2 duration-300 hover:text-negative">
+    <motion.div
+      className="relative flex h-full w-full flex-col overflow-hidden rounded-xl border-2 duration-300 hover:text-negative"
+      variants={variant}
+    >
       <div className="relative h-60 w-full">
         <Image
           className="object-contain"
@@ -23,6 +35,7 @@ export const Project = ({ project }: { project: ProjectType }) => {
             <a
               className="flex flex-1 items-center justify-center gap-x-2 rounded-md border p-2 text-lg"
               href={project.links.site_url}
+              target="_blank"
             >
               View Project
             </a>
@@ -30,12 +43,13 @@ export const Project = ({ project }: { project: ProjectType }) => {
           <a
             className="flex flex-1 items-center justify-center gap-x-2 rounded-md border p-2 text-lg"
             href={project.links.github_url}
+            target="_blank"
           >
             <SiGithub />
             Github
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
