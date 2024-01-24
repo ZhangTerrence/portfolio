@@ -6,7 +6,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="fixed inset-x-0 z-50 mx-auto flex h-16 w-screen items-center justify-end p-4">
+    <nav className="fixed inset-x-0 z-50 mx-auto flex h-16 w-screen items-center justify-end p-4 backdrop-blur">
       <ul className="flex justify-center gap-x-8 px-8 text-xl">
         <li className="cursor-pointer" onClick={() => scrollToView(1)}>
           About

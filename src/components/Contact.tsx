@@ -2,7 +2,7 @@
 
 export const Contact = () => {
   return (
-    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-4 p-4">
+    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-4 px-4 py-16">
       <h1 className="text-4xl font-bold text-negative">Contact</h1>
       <form className="flex w-[35%] flex-col gap-y-4">
         <input

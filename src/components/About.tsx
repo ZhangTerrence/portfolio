@@ -32,7 +32,7 @@ export const About = () => {
   ];
 
   return (
-    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32 p-4">
+    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32 px-4 py-16">
       <div className="flex flex-col items-center gap-y-4">
         <h1 className="text-4xl font-bold text-negative">About</h1>
         <p className="w-[50%] text-center text-xl leading-loose">
