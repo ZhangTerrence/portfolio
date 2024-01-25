@@ -29,7 +29,7 @@ export const ThemeToggler = () => {
 
   return (
     <motion.button
-      className="fixed right-0 m-8 text-4xl hover:text-negative"
+      className="fixed right-0 m-8 text-4xl hover:text-negative max-sm:text-2xl"
       onClick={() => switchTheme()}
       initial={{ bottom: "-100%", opacity: 0 }}
       animate={{ bottom: 0, opacity: 100 }}

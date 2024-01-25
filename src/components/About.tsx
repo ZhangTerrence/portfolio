@@ -35,7 +35,7 @@ export const About = () => {
   ];
 
   return (
-    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32 px-4 py-16">
+    <section className="flex h-screen w-screen flex-col items-center justify-center gap-y-32 px-4 py-16 max-sm:h-fit">
       <motion.div
         className="relative flex flex-col items-center gap-y-4"
         initial={{ opacity: 0, bottom: -50 }}
@@ -44,7 +44,7 @@ export const About = () => {
         viewport={{ once: true }}
       >
         <h1 className="text-4xl font-bold text-negative">About</h1>
-        <p className="w-[50%] text-center text-xl leading-loose">
+        <p className="w-[75%] text-center text-xl leading-loose max-md:w-full max-md:px-4 max-md:text-left">
           Hi, I&#39;m Terrence! I am currently a second-year computer science
           student studying at Stevens Institute of Technology. My primarily
           focus on fullstack web development but I am also interested in
@@ -59,7 +59,7 @@ export const About = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-2xl font-semibold">Skills</h2>
-        <div className="grid grid-cols-6 gap-8 text-6xl">
+        <div className="grid grid-cols-6 gap-8 text-6xl max-lg:grid-cols-5 max-md:grid-cols-4 max-sm:grid-cols-3">
           {logos.map((logo_component) => {
             return logo_component;
           })}

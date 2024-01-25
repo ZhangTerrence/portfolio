@@ -14,7 +14,7 @@ export const Navbar = () => {
       animate={{ top: 0, opacity: 100 }}
       transition={{ ease: "easeOut", duration: 1.5, delay: 0.5 }}
     >
-      <ul className="flex justify-center gap-x-8 px-2 text-xl">
+      <ul className="flex justify-center gap-x-8 px-2 text-xl max-sm:text-lg">
         <li
           className="cursor-pointer hover:scale-110 hover:text-negative"
           onClick={() => scrollToView(1)}

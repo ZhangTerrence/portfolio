@@ -79,7 +79,7 @@ export const Contact = () => {
         Contact
       </motion.h1>
       <motion.form
-        className="relative flex w-[35%] flex-col gap-y-4"
+        className="relative flex w-[35%] flex-col gap-y-4 max-xl:w-[50%] max-md:w-full max-md:px-8"
         initial={{ opacity: 0, bottom: -50 }}
         whileInView={{ opacity: 1, bottom: 0 }}
         transition={{ ease: "easeOut", duration: 0.75 }}

@@ -35,11 +35,11 @@ export const Project = ({
         <div className="flex w-full justify-between gap-x-2">
           {project.links.site_url && (
             <a
-              className="flex flex-1 items-center justify-center gap-x-2 rounded-md border border-primary p-2 text-lg"
+              className="flex flex-1 items-center justify-center gap-x-2  rounded-md border border-primary p-2 text-lg"
               href={project.links.site_url}
               target="_blank"
             >
-              View Project
+              View
               <FaExternalLinkAlt />
             </a>
           )}

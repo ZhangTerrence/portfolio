@@ -105,7 +105,7 @@ export const Projects = () => {
   };
 
   return (
-    <section className="flex h-fit w-screen flex-col items-center justify-center gap-y-4 px-4 py-16">
+    <section className="flex h-fit w-screen flex-col items-center justify-center gap-y-4 px-4 py-16 max-sm:h-fit">
       <motion.h1
         className="relative text-4xl font-bold text-negative"
         initial={{ opacity: 0, bottom: -25 }}
@@ -116,7 +116,7 @@ export const Projects = () => {
         Projects
       </motion.h1>
       <motion.div
-        className="grid grid-cols-3 gap-8"
+        className="grid grid-cols-3 gap-8 max-xl:grid-cols-2 max-md:grid-cols-1"
         initial={"hidden"}
         whileInView={"visible"}
         variants={projectContainerVariant}
