@@ -24,6 +24,7 @@ export const Project = ({
           src={project.image.url}
           alt={project.image.alt_text}
           fill={true}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="flex grow flex-col justify-between gap-y-4 p-4">
