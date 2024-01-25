@@ -1,11 +1,24 @@
 "use client";
 
-import { type FormEvent, useRef } from "react";
+import { type FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 export const Contact = () => {
-  const contactForm = useRef(null);
+  const contactForm = useRef<HTMLFormElement>(null);
+  const [formState, setFormState] = useState<"success" | "neutral" | "error">(
+    "neutral",
+  );
+
+  const renderBorderColor = () => {
+    if (formState === "success") {
+      return "border-green-400";
+    } else if (formState === "error") {
+      return "border-red-400";
+    } else {
+      return "";
+    }
+  };
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
@@ -15,12 +28,18 @@ export const Contact = () => {
       !process.env.EMAIL_TEMPLATE_ID ||
       !process.env.EMAIL_PUBLIC_KEY
     ) {
-      console.log("error sending message, try again!");
+      setFormState("error");
+      setTimeout(() => {
+        setFormState("neutral");
+      }, 1000);
       return;
     }
 
     if (!contactForm.current) {
-      console.log("error sending message, try again!");
+      setFormState("error");
+      setTimeout(() => {
+        setFormState("neutral");
+      }, 1000);
       return;
     }
 
@@ -32,13 +51,18 @@ export const Contact = () => {
         process.env.EMAIL_PUBLIC_KEY,
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sent!");
+        () => {
+          setFormState("success");
+          contactForm.current?.reset();
+          setTimeout(() => {
+            setFormState("neutral");
+          }, 1000);
         },
-        (error) => {
-          console.log(error.text);
-          console.log("error sending message, try again!");
+        () => {
+          setFormState("error");
+          setTimeout(() => {
+            setFormState("neutral");
+          }, 1000);
         },
       );
   };
@@ -64,21 +88,21 @@ export const Contact = () => {
         ref={contactForm}
       >
         <input
-          className="rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
+          className={`${renderBorderColor()} rounded-md border border-primary bg-accent p-2 text-negative outline-none transition-colors duration-300 placeholder-shown:text-primary focus:border-negative`}
           name="from_name"
           type="text"
           placeholder="Name"
           required
         />
         <input
-          className="rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
+          className={`${renderBorderColor()} rounded-md border border-primary bg-accent p-2 text-negative outline-none transition-colors duration-300 placeholder-shown:text-primary focus:border-negative`}
           name="from_email"
           type="email"
           placeholder="Email address"
           required
         />
         <textarea
-          className="h-60 resize-none rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
+          className={`${renderBorderColor()} h-60 resize-none rounded-md border border-primary bg-accent p-2 text-negative outline-none transition-colors duration-300 placeholder-shown:text-primary focus:border-negative`}
           name="message"
           placeholder="Message"
           required
@@ -86,7 +110,6 @@ export const Contact = () => {
         <button
           className="w-fit self-end rounded-md border border-primary px-6 py-2 text-lg hover:border-negative hover:text-negative"
           type="submit"
-          onClick={(e) => sendEmail(e)}
         >
           Submit
         </button>
