@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { type Project as ProjectType } from "./Projects";
 import { SiGithub } from "react-icons/si";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { type Variants, motion } from "framer-motion";
 
 export const Project = ({
@@ -14,7 +15,7 @@ export const Project = ({
 }) => {
   return (
     <motion.div
-      className="relative flex h-full w-full flex-col overflow-hidden rounded-xl border-2 duration-300 hover:text-negative"
+      className="relative flex h-full w-full flex-col overflow-hidden rounded-xl border-2 border-primary duration-300 hover:text-negative"
       variants={variant}
     >
       <div className="relative h-60 w-full">
@@ -33,15 +34,16 @@ export const Project = ({
         <div className="flex w-full justify-between gap-x-2">
           {project.links.site_url && (
             <a
-              className="flex flex-1 items-center justify-center gap-x-2 rounded-md border p-2 text-lg"
+              className="flex flex-1 items-center justify-center gap-x-2 rounded-md border border-primary p-2 text-lg"
               href={project.links.site_url}
               target="_blank"
             >
               View Project
+              <FaExternalLinkAlt />
             </a>
           )}
           <a
-            className="flex flex-1 items-center justify-center gap-x-2 rounded-md border p-2 text-lg"
+            className="flex flex-1 items-center justify-center gap-x-2 rounded-md border border-primary p-2 text-lg"
             href={project.links.github_url}
             target="_blank"
           >

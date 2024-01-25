@@ -22,25 +22,25 @@ export const Contact = () => {
         viewport={{ once: true }}
       >
         <input
-          className="rounded-md border bg-accent p-2 outline-none"
+          className="rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
           type="text"
           placeholder="Name"
         />
         <input
-          className="rounded-md border bg-accent p-2 outline-none"
+          className="rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
           type="text"
           placeholder="Email address"
         />
         <input
-          className="rounded-md border bg-accent p-2 outline-none"
+          className="rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
           type="text"
           placeholder="Subject"
         />
         <textarea
-          className="h-40 rounded-md border bg-accent p-2 outline-none"
+          className="h-40 resize-none rounded-md border border-primary bg-accent p-2 text-negative outline-none placeholder-shown:text-primary focus:border-negative"
           placeholder="Message"
         />
-        <button className="w-fit self-end rounded-md border px-6 py-2 text-lg">
+        <button className="w-fit self-end rounded-md border border-primary px-6 py-2 text-lg hover:border-negative hover:text-negative">
           Submit
         </button>
       </motion.form>

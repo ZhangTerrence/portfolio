@@ -15,8 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={font.className}>{children}</body>
+    <html lang="en" data-theme="dark">
+      <body
+        className={`${font.className} transition-colors duration-1000 ease-out`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

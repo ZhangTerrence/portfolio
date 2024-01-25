@@ -2,29 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background-start: #000;
-  --background-end: #000;
-  --background-accent: #444;
-  --foreground-primary: #999;
-  --foreground-negative: #000;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  html[data-theme="dark"] {
     --background-start: #000;
     --background-end: #000;
     --background-accent: #222;
     --foreground-primary: #999;
     --foreground-negative: #fff;
   }
-}
 
-body {
-  background: linear-gradient(to top, transparent, var(--background-start))
-    var(--background-end);
-  color: var(--foreground-primary);
+  html[data-theme="light"] {
+    --background-start: #fff;
+    --background-end: #d6dbdc;
+    --background-accent: #eaeff0;
+    --foreground-primary: #515050;
+    --foreground-negative: #000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--foreground-primary);
+    border-radius: 20px;
+  }
+
+  ::-webkit-slider-thumb:active {
+    background-color: var(--foreground-negative);
+  }
+
+  body {
+    background: linear-gradient(to top, transparent, var(--background-start))
+      var(--background-end);
+    color: var(--foreground-primary);
+  }
 }
