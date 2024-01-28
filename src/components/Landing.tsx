@@ -31,7 +31,7 @@ export const Landing = () => {
         >
           <div className="flex items-center gap-x-1 hover:scale-105 hover:text-negative">
             <FiDownload />
-            <a href="/static/resume.pdf" download="TerrenceZhang_Resume.pdf">
+            <a href="/static/Resume.pdf" download="TerrenceZhang_Resume.pdf">
               Resume
             </a>
           </div>
